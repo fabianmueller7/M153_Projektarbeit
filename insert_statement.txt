@@ -107,24 +107,24 @@ INSERT INTO Coach(Vorname, Nachname)
 VALUES ('Julian', 'Nagelsmann');
 
 
-INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor)
-VALUES ('Manchester United', 'MUN', 'TeamViewer');
+INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor, fk_CoachID)
+VALUES ('Manchester United', 'MUN', 'TeamViewer',  (Select id from Coach where Vorname = 'Erik'));
 
-INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor)
-VALUES ('FC Liverpool', 'LIV', 'Standard Chartered');
+INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor, fk_CoachID)
+VALUES ('FC Liverpool', 'LIV', 'Standard Chartered',  (Select id from Coach where Vorname = 'Juergen'));
 
-INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor)
-VALUES ('Real Madrid', 'RMA', 'Emirates');
+INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor, fk_CoachID)
+VALUES ('Real Madrid', 'RMA', 'Emirates',  (Select id from Coach where Vorname = 'Carlo'));
 
-INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor)
-VALUES ('Paris Saint-Germain', 'PAR', 'GOAT');
+INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor, fk_CoachID)
+VALUES ('Paris Saint-Germain', 'PAR', 'GOAT',  (Select id from Coach where Vorname = 'Mauricio'));
 
-INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor)
-VALUES ('FC Bayern Munich', 'BAY', 'Telekom');
+INSERT INTO Mannschaft (Klubname, Klubkürzel, Sponsor, fk_CoachID)
+VALUES ('FC Bayern Munich', 'BAY', 'Telekom',  (Select id from Coach where Vorname = 'Julian'));
 
 
 INSERT INTO [Fifa Ranking] ("Fifa Version", "Gesamt Rating", "Pace Rating", "Shoot Rating", "Pasing Rating", "Dribbling Rating", "Defensive Rating", "Physis Rating", "fk_SpielerID")
-Values ('Fifa 22', '91', '87' , '93', '82', '88', '34', '75',  (Select id from Spieler where Vorname = 'Christiano'));
+Values ('Fifa 22', '91', '87' , '93', '82', '88', '34', '75',  (Select id from Spieler where Vorname = 'Cristiano'));
 
 
 INSERT INTO [Fifa Ranking] ("Fifa Version", "Gesamt Rating", "Pace Rating", "Shoot Rating", "Pasing Rating", "Dribbling Rating", "Defensive Rating", "Physis Rating", "fk_SpielerID")

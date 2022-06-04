@@ -221,3 +221,84 @@ Values ('Fifa 22', '82', '65' , '42', '59', '51', '83' , '81',  (Select id from 
 
 INSERT INTO [Fifa Ranking] ("Fifa Version", "Gesamt Rating", "Pace Rating", "Shoot Rating", "Pasing Rating", "Dribbling Rating", "Defensive Rating", "Physis Rating", "fk_SpielerID")
 Values ('Fifa 22', '75', '76' , '70', '67', '84', '31', '49',  (Select id from Spieler where Vorname = 'Jamal'));
+
+
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2021-08-31', '2023-06-30', 'FALSE', '17400000', (Select id from Spieler where Vorname = 'Cristiano'), (Select id from Mannschaft where Klubname = 'Manchester United'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2016-08-09', '2022-06-30', 'FALSE', '9900000', (Select id from Spieler where Vorname = 'Paul'), (Select id from Mannschaft where Klubname = 'Manchester United'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2019-08-05', '2025-06-30', 'FALSE', '11500000', (Select id from Spieler where Vorname = 'Harry'), (Select id from Mannschaft where Klubname = 'Manchester United'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2020-01-29', '2026-06-30', 'FALSE', '8200000', (Select id from Spieler where Vorname = 'Bruno'), (Select id from Mannschaft where Klubname = 'Manchester United'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2021-08-14', '2025-06-30', 'FALSE', '11600000', (Select id from Spieler where Vorname = 'Raphael'), (Select id from Mannschaft where Klubname = 'Manchester United'));
+
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2017-07-01', '2023-06-30', 'FALSE', '12100000', (Select id from Spieler where Vorname = 'Mohamed'), (Select id from Mannschaft where Klubname = 'FC Liverpool'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2018-01-01', '2025-06-30', 'FALSE', '10100000', (Select id from Spieler where Vorname = 'Virgil'), (Select id from Mannschaft where Klubname = 'FC Liverpool'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2020-09-18', '2024-06-30', 'FALSE', '11500000', (Select id from Spieler where Vorname = 'Thiago'), (Select id from Mannschaft where Klubname = 'FC Liverpool'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2016-07-01', '2025-06-30', 'FALSE', '11200000', (Select id from Spieler where Vorname = 'Trend'), (Select id from Mannschaft where Klubname = 'FC Liverpool'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2011-07-01', '2025-06-30', 'FALSE', '7300000', (Select id from Spieler where Vorname = 'Jordan'), (Select id from Mannschaft where Klubname = 'FC Liverpool'));
+
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2009-07-09', '2023-06-30', 'FALSE', '13200000', (Select id from Spieler where Vorname = 'Karim'), (Select id from Mannschaft where Klubname = 'Real Madrid'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2018-07-12', '2024-06-30', 'FALSE', '3200000', (Select id from Spieler where Vorname = 'Vinicius'), (Select id from Mannschaft where Klubname = 'Real Madrid'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2012-08-27', '2022-06-30', 'FALSE', '11000000', (Select id from Spieler where Vorname = 'Luka'), (Select id from Mannschaft where Klubname = 'Real Madrid'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2021-07-01', '2026-06-30', 'FALSE', '11000000', (Select id from Spieler where Vorname = 'David'), (Select id from Mannschaft where Klubname = 'Real Madrid'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2019-07-01', '2025-06-30', 'FALSE', '4500000', (Select id from Spieler where Vorname = 'Eder'), (Select id from Mannschaft where Klubname = 'Real Madrid'));
+
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2021-08-10', '2023-06-30', 'FALSE', '31200000', (Select id from Spieler where Vorname = 'Lionel'), (Select id from Mannschaft where Klubname = 'Paris Saint-Germain'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2018-07-01', '2025-06-30', 'FALSE', '50000000', (Select id from Spieler where Vorname = 'Kylian'), (Select id from Mannschaft where Klubname = 'Paris Saint-Germain'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2017-08-03', '2025-06-30', 'FALSE', '37700000', (Select id from Spieler where Vorname = 'Neymar'), (Select id from Mannschaft where Klubname = 'Paris Saint-Germain'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2012-07-18', '2024-06-30', 'FALSE', '11100000', (Select id from Spieler where Vorname = 'Marco'), (Select id from Mannschaft where Klubname = 'Paris Saint-Germain'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2021-07-08', '2023-06-30', 'FALSE', '7300000', (Select id from Spieler where Vorname = 'Sergio'), (Select id from Mannschaft where Klubname = 'Paris Saint-Germain'));
+
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2014-07-01', '2023-06-30', 'FALSE', '12600000', (Select id from Spieler where Vorname = 'Robert'), (Select id from Mannschaft where Klubname = 'FC Bayern Munich'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2017-07-01', '2023-06-30', 'FALSE', '7000000', (Select id from Spieler where Vorname = 'Serge'), (Select id from Mannschaft where Klubname = 'FC Bayern Munich'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2019-01-01', '2025-06-30', 'FALSE', '6200000', (Select id from Spieler where Vorname = 'Alphonso'), (Select id from Mannschaft where Klubname = 'FC Bayern Munich'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2017-07-01', '2022-06-30', 'FALSE', '300000', (Select id from Spieler where Vorname = 'Niklas'), (Select id from Mannschaft where Klubname = 'FC Bayern Munich'));
+
+INSERT INTO spielt (von, bis, gesperrt, Lohn, fk_SpielerID, fk_MannschaftID)
+Values ('2020-07-01', '2026-06-30', 'FALSE', '240000', (Select id from Spieler where Vorname = 'Jamal'), (Select id from Mannschaft where Klubname = 'FC Bayern Munich'));

@@ -73,3 +73,28 @@ AS BEGIN
 END
 GO
 
+Create Procedure sp_UpsertFifaRanking
+	@Vorname varchar(50)= NULL,
+	@Nachname varchar(50)= NULL,
+	@Gebdatum date = NULL,
+	@FifaVersion varchar(50)= NULL,
+	@GesamtRating INT = 0,
+	@PaceRating INT = 0,
+	@ShootRating INT = 0,
+	@PasingRating INT = 0,
+	@DribblingRating INT = 0,
+	@DefensiveRating INT = 0,
+	@PhysisRating INT = 0
+AS BEGIN
+	if((Select COUNT([Fifa Ranking].fk_SpielerID) From [Fifa Ranking] join Spieler on Spieler.id = [Fifa Ranking].fk_SpielerID where Vorname = @Vorname and Nachname = @Nachname and Geburtsdatum = @Gebdatum and [Fifa Ranking].[Fifa Version] = @FifaVersion) = 0) BEGIN
+		INSERT INTO [Fifa Ranking] ("Fifa Version", "Gesamt Rating", "Pace Rating", "Shoot Rating", "Pasing Rating", "Dribbling Rating", "Defensive Rating", "Physis Rating", "fk_SpielerID")
+		Values (@FifaVersion, @GesamtRating, @PaceRating, @ShootRating, @PasingRating, @DribblingRating, @DefensiveRating, @PhysisRating, (Select id from Spieler Where Vorname = @Vorname and Nachname = @Nachname and Geburtsdatum = @Gebdatum));
+		PRINT 'Ranking hinzugefügt'
+	END ELSE BEGIN
+		Update [Fifa Ranking] SET "Fifa Version" = @FifaVersion, "Gesamt Rating" = @GesamtRating, "Pace Rating" = @PaceRating, "Shoot Rating" = @ShootRating, "Pasing Rating" = @PasingRating, "Dribbling Rating" = @DribblingRating, "Defensive Rating" =  @DefensiveRating, "Physis Rating" = @PhysisRating
+		where [Fifa Ranking].fk_SpielerID = (Select id From Spieler where Vorname = @Vorname and Nachname = @Nachname and Geburtsdatum = @Gebdatum) and [Fifa Ranking].[Fifa Version] = @FifaVersion;
+		Print 'Ranking akktualisiert'
+	END
+END
+GO
+

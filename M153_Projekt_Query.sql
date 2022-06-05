@@ -34,6 +34,11 @@ DECLARE @Summe INT = 0;
 EXEC @Summe = sp_AnzSpieler 'RMA';
 PRINT Concat('In der Mannschaft sind ',@Summe, ' Spieler.');
 
+/*Mit hilfe der Stored Procedure sp_UpsertFifaRanking ein Ranking hinzufügen*/
+EXEC sp_UpsertFifaRanking 'Bruno', 'Fernandes', '1994-09-08', 'testversion', 100, 90,80,70,60,50,40
+
+/*Mit hilfe der Stored Procedure sp_UpsertFifaRanking ein Ranking akktualisieren*/
+EXEC sp_UpsertFifaRanking 'Bruno', 'Fernandes', '1994-09-08', 'Fifa 22', 100, 90,80,70,60,50,40
 
 
 

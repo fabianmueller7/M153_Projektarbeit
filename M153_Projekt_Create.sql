@@ -64,3 +64,12 @@ begin
 end
 GO
 
+Create Procedure sp_AnzSpieler
+	@KlubkürzelBez varchar(50)= NULL
+AS BEGIN
+	DECLARE @AnzSpieler INT = 0;
+	SET @AnzSpieler = (Select COUNT(spielt.fk_SpielerID) from Mannschaft join spielt on spielt.fk_MannschaftID = Mannschaft.id Where spielt.bis > CURRENT_TIMESTAMP and Mannschaft.Klubkürzel = @KlubkürzelBez);
+	RETURN @AnzSpieler;
+END
+GO
+

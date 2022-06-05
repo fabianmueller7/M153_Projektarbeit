@@ -21,10 +21,9 @@ join "Fifa Ranking" on Spieler.id = [Fifa Ranking].fk_SpielerID
 Group by Mannschaft.id, Mannschaft.Klubname
 Order By "Durchschnittliche Spieler stärke" asc
 
-/*Ändere den Teamnamen von FC Bayern Munich zu FC Bayern Muenchen*/
-Update Mannschaft
-Set Mannschaft.Klubname = 'FC Bayern Muenchen'
-Where Mannschaft.Klubname = 'FC Bayern Munich'
+/*Lösche Mannschaft Paris Saint-Germain von table Mannschaft*/
+alter table spielt nocheck constraint spielt_fk_mannschaftid_foreign
+DELETE FROM Mannschaft WHERE Mannschaft.Klubname = 'Paris Saint-Germain';
 
 /*Tabelle mit allen aktiven Spielern, deren Mannschaften, deren Gesamt Ratings und deren Jahres Lohn.
 Absteigend sortiert nach dem Jahreslohn*/

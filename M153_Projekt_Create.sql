@@ -56,3 +56,11 @@ ALTER TABLE
     Mannschaft ADD CONSTRAINT mannschaft_fk_coachid_foreign FOREIGN KEY(fk_CoachID) REFERENCES Coach(id);
 ALTER TABLE
     spielt ADD CONSTRAINT spielt_fk_mannschaftid_foreign FOREIGN KEY(fk_MannschaftID) REFERENCES Mannschaft(id);
+GO
+
+Create Trigger OnMannschaftdelete on Mannschaft AFTER delete as
+begin
+	Update spielt Set spielt.bis = CURRENT_TIMESTAMP, spielt.fk_MannschaftID = NULL Where spielt.fk_MannschaftID = (select id from deleted) AND spielt.bis > CURRENT_TIMESTAMP
+end
+GO
+
